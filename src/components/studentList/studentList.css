@@ -1,0 +1,4 @@
+.studentList {
+  display: flex;
+  flex-direction: row;
+}
