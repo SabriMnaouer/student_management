@@ -1,18 +1,51 @@
-.studentCard{
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    width: 250px;
-    text-align: center;
+.studentCard {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: left;
     overflow: hidden;
-    margin-top: 20px;
-}
-.studentName{
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(12, 239, 50);
-}
-.studentEmail, .studentAge, .studentPhone{
-    color: black;
-    font-size: 10px;
-}
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .studentCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .studentName {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0ce732;
+  }
+  
+  .studentEmail, .studentAge, .studentPhone {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .TiDelete {
+    color: #ff4d4f;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .TiDelete:hover {
+    color: #ff1a1a;
+  }
+  
