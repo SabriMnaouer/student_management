@@ -3,23 +3,30 @@ import { SearchProps } from "../../types";
 import "./Search.css";
 
 export const Search: React.FunctionComponent<SearchProps> = (props) => {
+  
   const changeInput = (e: ChangeEvent<HTMLInputElement>) => {
     props.setInputValue(e.target.value);
   };
-  const searchForElement = () => {
+
+  const handleSearchClick = () => {
     props.searchForElement();
   };
 
-  const deleteElement = () => {
-    const result = props.studentList.filter(
-      (el) => el.name !== props.inputValue
-    );
-    const remElements = props.studentList.filter(
-      (el) => el.name === props.inputValue
-    );
-    props.updateRemovedElement(remElements);
+  const handleDeleteClick = () => {
+    const result = filterStudents();
+    const removed = getRemovedStudents();
+    props.updateRemovedElement(removed);
     props.setFilteredStudent(result);
   };
+
+  const filterStudents = () => {
+    return props.studentList.filter((el) => el.name !== props.inputValue);
+  };
+
+  const getRemovedStudents = () => {
+    return props.studentList.filter((el) => el.name === props.inputValue);
+  };
+
   return (
     <div className="searchContainer">
       <input
@@ -29,10 +36,10 @@ export const Search: React.FunctionComponent<SearchProps> = (props) => {
         value={props.inputValue}
         onChange={changeInput}
       />
-      <button className="searchButton" onClick={searchForElement}>
+      <button className="searchButton" onClick={handleSearchClick}>
         Search
       </button>
-      <button className="deleteButton" onClick={deleteElement}>
+      <button className="deleteButton" onClick={handleDeleteClick}>
         Delete
       </button>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { StudentList } from "./components/studentList/StudentList";
 
-function App() {
+export const App = ()=> {
   return <StudentList />;
 }
 
